@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="Thoughtfully chosen essentials for slower mornings, softer spaces, and everyday rituals.">
+  <title>LUXE — Things worth keeping</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announcement">
+    <p>Thoughtful things, delivered with care <span aria-hidden="true">✦</span> Complimentary shipping over $100</p>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner page-width">
+      <a class="wordmark" href="#" aria-label="Luxe home">luxe<span>.</span></a>
+
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="#shop">Shop all</a>
+        <a href="#shop" data-nav-category="Home">Home</a>
+        <a href="#shop" data-nav-category="Accessories">Accessories</a>
+        <a href="#story">Our approach</a>
+      </nav>
+
+      <div class="header-actions">
+        <label class="search-box">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+          <span class="visually-hidden">Search products</span>
+          <input id="searchInput" type="search" placeholder="Search..." autocomplete="off">
+        </label>
+        <button class="icon-button bag-button" id="openCartButton" type="button" aria-label="Open shopping bag, 0 items">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8h14l1 12H4L5 8Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path></svg>
+          <span class="bag-count" id="cartCount" aria-live="polite">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero page-width" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-rule"></span> A little more intentional</p>
+        <h1 id="heroTitle">Things worth<br><em>keeping.</em></h1>
+        <p class="hero-description">A considered collection for the everyday. Made to be used, loved, and kept for a long time.</p>
+        <a class="button button-dark" href="#shop">Shop the collection <span aria-hidden="true">↗</span></a>
+        <div class="hero-note"><span class="note-stars" aria-hidden="true">★★★★★</span><span>Loved by 2,400+ thoughtful homes</span></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1400&q=85" alt="Warm, sunlit living room with thoughtfully chosen furniture" fetchpriority="high">
+        <div class="image-caption"><span>THE SLOW LIVING EDIT</span><span>01 — 04</span></div>
+        <div class="hero-sticker" aria-hidden="true"><span>MADE FOR</span><strong>everyday<br>rituals</strong><span>EST. WITH CARE</span></div>
+      </div>
+    </section>
+
+    <section class="promise-strip" aria-label="Our promises">
+      <div class="page-width promise-inner">
+        <p><span aria-hidden="true">✳</span> Considered materials</p>
+        <p><span aria-hidden="true">↗</span> Small-batch makers</p>
+        <p><span aria-hidden="true">♡</span> Made to last</p>
+        <p><span aria-hidden="true">☼</span> Easy, mindful living</p>
+      </div>
+    </section>
+
+    <section class="shop-section page-width" id="shop" aria-labelledby="shopTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Good things, gathered</p>
+          <h2 id="shopTitle">The considered edit</h2>
+        </div>
+        <p class="section-aside">Useful, beautiful, and a little bit special.<br>Find your new everyday favorite.</p>
+      </div>
+
+      <div class="shop-controls">
+        <div class="category-filters" id="categoryFilters" role="group" aria-label="Filter products by category">
+          <button class="filter-chip is-active" type="button" data-category="All" aria-pressed="true">Everything</button>
+        </div>
+        <label class="sort-control">Sort by
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="results-count" id="resultsCount" aria-live="polite"></p>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-results" id="emptyResults" hidden>
+        <span aria-hidden="true">⌕</span>
+        <h3>No lovely things found</h3>
+        <p>Try a different search or browse everything.</p>
+        <button class="button button-outline" id="resetFiltersButton" type="button">Clear filters</button>
+      </div>
+    </section>
+
+    <section class="story-section" id="story" aria-labelledby="storyTitle">
+      <div class="story-inner page-width">
+        <div class="story-image">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="A calm, naturally textured home interior" loading="lazy">
+          <span class="story-image-label">LESS, BUT LOVELIER</span>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">A note from us</p>
+          <h2 id="storyTitle">Buy less.<br><em>Choose well.</em></h2>
+          <p>We believe the things around us should earn their place. So we look for honest materials, thoughtful makers, and pieces that feel better with every passing year.</p>
+          <a class="text-link" href="#shop">Get to know our collection <span aria-hidden="true">→</span></a>
+          <span class="story-mark" aria-hidden="true">l.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section page-width" aria-labelledby="newsletterTitle">
+      <div>
+        <p class="eyebrow">A thoughtful little note</p>
+        <h2 id="newsletterTitle">Good things, occasionally.</h2>
+        <p>New finds, maker stories, and 10% off your first order.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <label class="visually-hidden" for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+        <button class="button button-dark" type="submit">Count me in <span aria-hidden="true">→</span></button>
+        <p class="newsletter-message" id="newsletterMessage" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-main">
+      <div class="footer-brand">
+        <a class="wordmark" href="#" aria-label="Luxe home">luxe<span>.</span></a>
+        <p>Make room for what matters.</p>
+      </div>
+      <div class="footer-column">
+        <h2>Explore</h2>
+        <a href="#shop">Shop all</a>
+        <a href="#story">Our approach</a>
+        <a href="#shop">Bestsellers</a>
+      </div>
+      <div class="footer-column">
+        <h2>Here to help</h2>
+        <a href="mailto:hello@luxe.example">Contact us</a>
+        <a href="#footerLegal">Shipping & returns</a>
+        <a href="#footerLegal">FAQs</a>
+      </div>
+      <div class="footer-signoff">
+        <span aria-hidden="true">✳</span>
+        <p>Made for living.<br>Chosen with care.</p>
+      </div>
+    </div>
+    <div class="footer-bottom page-width" id="footerLegal">
+      <p>© <span id="currentYear"></span> LUXE. Made for everyday living.</p>
+      <div><a href="#footerLegal">Privacy</a><a href="#footerLegal">Terms</a><span>Thoughtfully online, everywhere.</span></div>
+    </div>
+  </footer>
+
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true" hidden>
+    <div class="drawer-header">
+      <div><p class="eyebrow">The good stuff</p><h2 id="cartTitle">Your bag <span id="cartTitleCount">(0)</span></h2></div>
+      <button class="icon-button close-drawer" id="closeCartButton" type="button" aria-label="Close shopping bag">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+      </button>
+    </div>
+    <div class="drawer-items" id="cartItems" aria-live="polite"></div>
+    <div class="drawer-footer">
+      <div class="shipping-note"><span aria-hidden="true">✳</span> <span id="shippingMessage">You’re close to complimentary shipping.</span></div>
+      <div class="subtotal-row"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+      <p class="tax-note">Shipping and taxes calculated at checkout.</p>
+      <button class="button button-dark checkout-button" id="checkoutButton" type="button">Continue to checkout <span aria-hidden="true">↗</span></button>
+      <button class="continue-shopping" id="continueShoppingButton" type="button">Keep looking around</button>
+    </div>
+  </aside>
+
+  <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div>
+</body>
+</html>
